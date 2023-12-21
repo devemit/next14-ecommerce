@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { ProductProps } from '@/types/types';
 import Link from 'next/link';
+import { ProductProps } from '@/types/types';
 
 export default function Product({ title, category, price, image, id }: ProductProps) {
   return (

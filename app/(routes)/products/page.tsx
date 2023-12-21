@@ -16,15 +16,15 @@ export default async function Shop() {
         {data &&
           data.map((el, index) => (
             <div key={index}>
-              <Suspense fallback={<Loading />}>
-                <Product
-                  id={el.id}
-                  title={el.title}
-                  category={el.category}
-                  price={el.price}
-                  image={el.image}
-                />
-              </Suspense>
+              {/* <Suspense fallback={<Loading />}> */}
+              <Product
+                id={el.id}
+                title={el.title}
+                category={el.category}
+                price={el.price}
+                image={el.image}
+              />
+              {/* </Suspense> */}
             </div>
           ))}
       </div>
