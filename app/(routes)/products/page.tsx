@@ -15,8 +15,8 @@ export default async function Shop() {
       <div className='grid grid-cols-1 md:grid-cols-3 lg:grid gap-10'>
         {data &&
           data.map((el, index) => (
-            <Suspense fallback={<Loading />}>
-              <div key={index}>
+            <div key={index}>
+              <Suspense fallback={<Loading />}>
                 <Product
                   id={el.id}
                   title={el.title}
@@ -24,8 +24,8 @@ export default async function Shop() {
                   price={el.price}
                   image={el.image}
                 />
-              </div>
-            </Suspense>
+              </Suspense>
+            </div>
           ))}
       </div>
     </div>
