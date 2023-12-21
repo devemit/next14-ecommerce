@@ -14,16 +14,17 @@ export default async function Shop() {
     <div className='px-6 md:px-10 lg:px-14'>
       <div className='grid grid-cols-1 md:grid-cols-3 lg:grid gap-10'>
         {data &&
-          data.map((el, index) => (
+          data.map((el) => (
             <Suspense fallback={<Loading />}>
-              <Product
-                id={el.id}
-                key={index}
-                title={el.title}
-                category={el.category}
-                price={el.price}
-                image={el.image}
-              />
+              <div key={el.id}>
+                <Product
+                  id={el.id}
+                  title={el.title}
+                  category={el.category}
+                  price={el.price}
+                  image={el.image}
+                />
+              </div>
             </Suspense>
           ))}
       </div>
