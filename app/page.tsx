@@ -6,8 +6,8 @@ export default function Home() {
       <div className='flex-1'>
         <h1>Where you sell your products matters</h1>
         <p>
-          We'll help you find the right marketing channels to scale. Optimize and automate all of
-          your online activity
+          We`&apos;`ll help you find the right marketing channels to scale. Optimize and automate
+          all of your online activity
         </p>
         <button>Explore</button>
       </div>
