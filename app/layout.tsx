@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
-import Navbar from '@/components/navbar';
+import { CartProvider } from '@/context/CartContext';
 import { Be_Vietnam_Pro } from 'next/font/google';
+import { Toaster } from '@/components/ui/toaster';
+
+import Navbar from '@/components/navbar';
 import './globals.css';
 
 const vietnami = Be_Vietnam_Pro({ subsets: ['latin'], weight: ['400', '500', '700'] });
@@ -13,9 +16,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
-      <body className={`${vietnami.className} bg-slate-100 max-w-7xl m-auto w-full px-4`}>
-        <Navbar />
-        <main>{children}</main>
+      <body className={`${vietnami.className}  max-w-7xl m-auto w-full px-4`}>
+        <CartProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Toaster />
+        </CartProvider>
       </body>
     </html>
   );
