@@ -25,15 +25,15 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
   }
 };
 
-const STORAGE_KEY = 'cart';
+// const STORAGE_KEY = 'cart';
 
 const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const storedCart = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null') || { items: [] };
-  const [cartState, dispatch] = useReducer(cartReducer, storedCart);
+  // const storedCart = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null') || { items: [] };
+  const [cartState, dispatch] = useReducer(cartReducer, { items: [] });
 
-  useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(cartState));
-  }, [cartState]);
+  // useEffect(() => {
+  //   localStorage.setItem(STORAGE_KEY, JSON.stringify(cartState));
+  // }, [cartState]);
 
   const addToCart = (product: ProductInCartProps) => {
     dispatch({ type: 'ADD_TO_CART', payload: product });
