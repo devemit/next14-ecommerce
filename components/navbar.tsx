@@ -33,9 +33,11 @@ export default function Navbar() {
       <div className='flex items-center gap-4'>
         <Link className='cursor-pointer ml-4 flex' href='/cart'>
           <ShoppingCart size={22} />
-          <div className='relative bg-red-700 w-4 h-4  flex items-center justify-center rounded-full'>
-            <span className='absolute text-xs text-white'>{cartState.items.length}</span>
-          </div>
+          {cartState.items.length > 0 && (
+            <div className='relative bg-red-700 w-4 h-4  flex items-center justify-center rounded-full'>
+              <span className='absolute text-xs text-white'>{cartState.items.length}</span>
+            </div>
+          )}
         </Link>
         <MobileNav />
       </div>
