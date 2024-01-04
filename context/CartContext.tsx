@@ -7,11 +7,14 @@ import React, { createContext, useContext, useReducer, useEffect, ReactNode } fr
 import { ProductInCartProps } from '@/types/types';
 import { CartState } from '@/types/types';
 
-type CartAction = { type: 'ADD_TO_CART'; payload: ProductInCartProps };
+type CartAction =
+  | { type: 'ADD_TO_CART'; payload: ProductInCartProps }
+  | { type: 'REMOVE_FROM_CART'; payload: number };
 
 interface CartContextType {
   cartState: CartState;
   addToCart: (product: ProductInCartProps) => void;
+  removeFromCart: (productId: number) => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -20,7 +23,11 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
   switch (action.type) {
     case 'ADD_TO_CART':
       return { ...state, items: [...state.items, action.payload] };
-    // Add more cases as needed (e.g., REMOVE_FROM_CART)
+    case 'REMOVE_FROM_CART':
+      return {
+        ...state,
+        items: state.items.filter((item) => item.id !== action.payload),
+      };
     default:
       return state;
   }
@@ -39,8 +46,15 @@ const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const addToCart = (product: ProductInCartProps) => {
     dispatch({ type: 'ADD_TO_CART', payload: product });
   };
+  const removeFromCart = (productId: number) => {
+    dispatch({ type: 'REMOVE_FROM_CART', payload: productId });
+  };
 
-  return <CartContext.Provider value={{ cartState, addToCart }}>{children}</CartContext.Provider>;
+  return (
+    <CartContext.Provider value={{ cartState, addToCart, removeFromCart }}>
+      {children}
+    </CartContext.Provider>
+  );
 };
 
 const useCart = (): CartContextType => {

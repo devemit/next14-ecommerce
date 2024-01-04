@@ -23,7 +23,7 @@ export default async function SingleProduct({ params: { id } }: ParamsProps) {
         </div>
         {/*  buttons */}
         <div className='pt-6'>
-          <Button asChild>
+          <Button asChild size='sm'>
             <Link href='/products'>Shop now</Link>
           </Button>
         </div>
@@ -33,8 +33,8 @@ export default async function SingleProduct({ params: { id } }: ParamsProps) {
         <Image
           src={product.image}
           alt='product-image'
-          width={250}
-          height={175}
+          width={215}
+          height={145}
           className='object-contain'
         />
       </div>
