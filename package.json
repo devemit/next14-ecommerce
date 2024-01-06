@@ -13,6 +13,7 @@
     "@radix-ui/react-toast": "^1.1.5",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "embla-carousel-react": "^8.0.0-rc18",
     "framer-motion": "^10.16.12",
     "lucide-react": "^0.294.0",
     "next": "14.0.3",
