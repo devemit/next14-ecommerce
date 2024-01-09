@@ -4,7 +4,7 @@
 import React, { createContext, useContext, useReducer, useEffect, ReactNode } from 'react';
 
 // types
-import { ProductInCartProps } from '@/types/types';
+import { ProductInCartProps, SingleProductProps } from '@/types/types';
 import { CartState } from '@/types/types';
 
 type CartAction =
@@ -15,6 +15,7 @@ interface CartContextType {
   cartState: CartState;
   addToCart: (product: ProductInCartProps) => void;
   removeFromCart: (productId: number) => void;
+  getTotalPrice: () => any;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -50,8 +51,16 @@ const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     dispatch({ type: 'REMOVE_FROM_CART', payload: productId });
   };
 
+  const calculateTotalPrice = (items: any[]): number => {
+    return items.reduce((total, item) => total + item.price * (item.quantity || 1), 0);
+  };
+
+  const getTotalPrice = () => {
+    return calculateTotalPrice(cartState.items);
+  };
+
   return (
-    <CartContext.Provider value={{ cartState, addToCart, removeFromCart }}>
+    <CartContext.Provider value={{ cartState, addToCart, removeFromCart, getTotalPrice }}>
       {children}
     </CartContext.Provider>
   );
