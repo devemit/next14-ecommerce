@@ -41,7 +41,7 @@ export default function Shop() {
   if (loading) return <Spinner />;
 
   return (
-    <div className='px-6 md:px-10 lg:px-14'>
+    <div className='px-6 md:px-10 pt-6 lg:px-14'>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid gap-10'>
         {data &&
           data.map((el, index) => (

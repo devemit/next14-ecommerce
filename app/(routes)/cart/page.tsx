@@ -2,8 +2,10 @@
 
 import { Button } from '@/components/ui/button';
 // context imports
+
 import { useCart } from '@/context/CartContext';
 import { ProductInCartProps } from '@/types/types';
+
 // next/react imports
 
 import Image from 'next/image';
@@ -19,7 +21,7 @@ const ShoppingCart = () => {
   }
 
   return (
-    <div className='px-6 md:px-10 lg:px-14 flex flex-col pt-8 gap-10 items-center justify-center'>
+    <div className='px-6 md:px-10 lg:px-14 flex flex-col pt-8 mb-6 gap-10 items-center justify-center'>
       <h2 className='text-3xl font-bold'>Shopping Cart</h2>
       <p className='font-semibold'>Total Price: {getTotalPrice()}$</p>
       <hr className='bg-slate-600  w-full' />

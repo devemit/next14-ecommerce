@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
-      <body className={`${vietnami.className}  max-w-7xl m-auto w-full px-4`}>
+      <body className={`${vietnami.className}  max-w-7xl m-auto w-full`}>
         <CartProvider>
           <Navbar />
           <main>{children}</main>
