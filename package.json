@@ -11,6 +11,8 @@
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-toast": "^1.1.5",
+    "@tanstack/react-query": "^5.17.9",
+    "axios": "^1.6.5",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "embla-carousel-react": "^8.0.0-rc18",
@@ -19,11 +21,13 @@
     "next": "14.0.3",
     "react": "^18",
     "react-dom": "^18",
+    "swr": "^2.2.4",
     "tailwind-merge": "^2.1.0",
     "tailwindcss-animate": "^1.0.7",
     "zustand": "^4.4.7"
   },
   "devDependencies": {
+    "@tanstack/eslint-plugin-query": "^5.17.7",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

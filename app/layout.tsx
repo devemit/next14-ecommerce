@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { CartProvider } from '@/context/CartContext';
 import { Be_Vietnam_Pro } from 'next/font/google';
 import { Toaster } from '@/components/ui/toaster';
-
 import Navbar from '@/components/navbar';
 import './globals.css';
 
