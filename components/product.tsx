@@ -14,7 +14,7 @@ export default function Product({ title, category, price, image, id }: SinglePro
           <Image src={image} alt='product-image' width={125} height={75} />
         </div>
         <br />
-        <span className='text-slate-900 font-bold'>{price}$</span>
+        <span className='text-slate-500 font-bold text-xs'>{price}$</span>
         <br />
       </Link>
     </div>

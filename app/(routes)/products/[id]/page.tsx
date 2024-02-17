@@ -12,7 +12,7 @@ export default async function SingleProduct({ params: { id } }: ParamsProps) {
   const product = await fetchSingleProduct(id);
 
   return (
-    <section className='px-6 md:px-10 lg:px-14  md:pt-24 space-y-4 flex flex-col md:flex-row md:justify-between w-full mx-auto'>
+    <section className='px-6 md:px-10 lg:px-14 md:pt-24 space-y-4 flex flex-col md:flex-row md:justify-between w-full mx-auto'>
       {/*  description */}
       <div className='left'>
         <div className='font-bold text-2xl md:text-3xl lg:text-4xl max-w-sm md:max-w-md text-slate-900'>

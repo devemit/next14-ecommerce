@@ -1,8 +1,8 @@
 export interface SingleProductProps {
-  id: number;
-  title: string;
-  category: string;
-  price: string;
+  id?: number;
+  title?: string;
+  category?: string;
+  price?: string;
   image?: any;
 }
 export interface ProductInCartProps {

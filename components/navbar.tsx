@@ -1,14 +1,13 @@
 'use client';
-// next imports
 import { usePathname } from 'next/navigation';
 import { routes } from '@/utils/routes';
 import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
 
-// components
 import Logo from './logo';
 import MobileNav from './mobile-nav';
 import { ShoppingCart } from 'lucide-react';
+import { Button } from './ui/button';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -39,6 +38,9 @@ export default function Navbar() {
             </div>
           )}
         </Link>
+        <Button className='hidden md:block' size='sm'>
+          Login
+        </Button>
         <MobileNav />
       </div>
     </nav>

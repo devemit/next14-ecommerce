@@ -1,42 +1,21 @@
 'use client';
-// react imports
+
 import useSWR from 'swr';
 import { ProductInCartProps } from '@/types/types';
 import { useToast } from '@/components/ui/use-toast';
 import { useCart } from '@/context/CartContext';
 import { useFormStatus } from 'react-dom';
-
-// components imports
 import { Button } from '@/components/ui/button';
 import Product from '@/components/product';
 import Spinner from '@/components/loading-spinner';
 
 export default function Shop() {
-  // const [data, setData] = useState<any[]>([]);
-  // const [loading, setLoading] = useState(false);
-
   const { addToCart } = useCart();
   const { toast } = useToast();
   const { pending } = useFormStatus();
 
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
   const { data, error, isLoading } = useSWR('https://fakestoreapi.com/products', fetcher);
-
-  // useEffect(() => {
-  //   async function getData() {
-  //     setLoading(true);
-  //     try {
-  //       const res = await fetch('https://fakestoreapi.com/products');
-  //       const result = await res.json();
-  //       setData(result);
-  //     } catch (error) {
-  //       console.log(error);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   }
-  //   getData();
-  // }, []);
 
   const handleAddToCart = (product: ProductInCartProps) => {
     addToCart(product);

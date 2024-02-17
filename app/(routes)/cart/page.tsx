@@ -1,15 +1,10 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
-// context imports
-
-import { useCart } from '@/context/CartContext';
-import { ProductInCartProps } from '@/types/types';
-
-// next/react imports
-
 import Image from 'next/image';
 import Link from 'next/link';
+import { ProductInCartProps } from '@/types/types';
+import { useCart } from '@/context/CartContext';
+import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 
 const ShoppingCart = () => {
@@ -32,7 +27,7 @@ const ShoppingCart = () => {
           {cartState.items.map((product, index) => (
             <div
               key={index}
-              className='space-y-6 mt-2  p-2 md:flex md:items-center md:justify-between gap-20'
+              className='space-y-6 mt-2 p-2 md:flex md:items-center md:justify-between gap-20'
             >
               <div className='space-y-4'>
                 <li className='max-w-xs text-slate-600 text-md'>{product.title}</li>

@@ -1,10 +1,6 @@
 'use client';
-
-// react imports
 import React, { createContext, useContext, useReducer, useEffect, ReactNode } from 'react';
-
-// types
-import { ProductInCartProps, SingleProductProps } from '@/types/types';
+import { ProductInCartProps } from '@/types/types';
 import { CartState } from '@/types/types';
 
 type CartAction =

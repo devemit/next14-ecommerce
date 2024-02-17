@@ -1,13 +1,10 @@
 'use client';
-
-// react imports
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-
-// components imports
 import { routes } from '@/utils/routes';
 import { Menu, X } from 'lucide-react';
+import { Button } from './ui/button';
 
 export default function MobileNav() {
   const [nav, setNav] = useState(false);
@@ -41,6 +38,7 @@ export default function MobileNav() {
             {route.title}
           </Link>
         ))}
+        <Button size='sm'>Login</Button>
       </ul>
     </section>
   );

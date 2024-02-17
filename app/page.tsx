@@ -1,14 +1,24 @@
+import Carousel from '@/components/carousel';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
+
 export default function Home() {
   return (
-    <div className='px-6 md:px-10 lg:px-14 flex bg-slate-100 flex-col pt-8 lg:pt-24 md:flex-row gap-12 md:gap-6 h-full'>
+    <div className='px-6 md:px-10 lg:px-14 flex flex-col pt-8 lg:pt-24 md:flex-row gap-12 md:gap-6 h-full'>
       <div className='flex-1 text-center md:text-left max-w-lg space-y-12'>
-        <h3 className='text-md text-slate-700'>Where you sell your products matters</h3>
+        <h3 className='text-xl font-semibold text-slate-700'>
+          Where you sell your products matters
+        </h3>
         <h1 className='text-4xl md:text-5xl font-semibold'>
           The center of <span className='text-green-500'>your helpful home.</span>
         </h1>
+        <p className='text-base text-slate-600'>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore explicabo distinctio
+          illum neque deleniti provident asperiores, qui accusantium eos nam laborum, voluptatibus
+          quaerat quam ut, magnam facere deserunt? Nam voluptate dolor excepturi ad quam harum.
+          Recusandae mollitia laudantium odit assumenda.
+        </p>
         <Button asChild size='sm'>
           <Link href='/products'>Explore more</Link>
         </Button>
@@ -21,6 +31,7 @@ export default function Home() {
           height={550}
           className='rounded-xl'
         />
+        <Carousel />
       </div>
     </div>
   );
