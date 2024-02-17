@@ -18,7 +18,7 @@ const ShoppingCart = () => {
   return (
     <div className='px-6 md:px-10 lg:px-14 flex flex-col pt-8 mb-6 gap-10 items-center justify-center'>
       <h2 className='text-3xl font-bold'>Shopping Cart</h2>
-      <p className='font-semibold'>Total Price: {getTotalPrice()}$</p>
+      <p className='font-semibold'>Total Price: {getTotalPrice().toFixed(2)}$</p>
       <hr className='bg-slate-600  w-full' />
       {cartState.items.length === 0 ? (
         <div className='text-slate-600'>Your cart is empty</div>
