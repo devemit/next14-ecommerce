@@ -16,9 +16,7 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This project is a modern e-commerce website developed using Next14(SSR) with TypeScript and styled with Tailwind CSS. The website provides users with a seamless shopping experience, allowing them to browse through a variety of products, view detailed product information, and add items to their shopping cart.
 
 ## Learn More
 
